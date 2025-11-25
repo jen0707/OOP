@@ -109,8 +109,12 @@ public class BankApplication {
          
          System.out.print("출금액: ");
          int money = Integer.parseInt(scanner.nextLine());
-         account.setBalance(account.getBalance() - money);
-         System.out.println("결과: 출금이 성공되었습니다.");
+		     if(money <= account.getBalance()) {
+			    	 account.setBalance(account.getBalance() - money);
+			    	 System.out.println("결과: 출금이 성공되었습니다.");
+    	 
+		     }else {
+		    	 System.out.println("결과: 출금불가. 현재 잔액은 " + account.getBalance() + "원 입니다.");		     }
      }
      
      private static Account findAccount(String num) {
@@ -122,6 +126,3 @@ public class BankApplication {
          return null;
      }
  }
-
-      
-          
