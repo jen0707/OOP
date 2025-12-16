@@ -1,4 +1,4 @@
-package googleAPI_pj;
+package teamProjectFinal;
 
 public class Restaurant {
     String name, address, placeUrl, stationName, category;
